@@ -5,7 +5,6 @@ let React = {
         return tag(props);
       } catch ({ promise, key }) {
         promise.then((data) => {
-          console.log(promise);
           promiseCache.set(key, data);
           rerender();
         });
@@ -13,7 +12,6 @@ let React = {
       }
     }
     const element = { tag, props: { props, children } };
-    console.log(element);
     return element;
   },
 };
